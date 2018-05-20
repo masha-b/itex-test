@@ -1,7 +1,10 @@
-<p>Message from <?php //echo $name . ': ' . $message ?></p>
-
-<p>You may change the content of this page by modifying the following two files:</p>
-<ul>
-	<li>View file: <tt><?php echo __FILE__; ?></tt></li>
-	<li>Layout file: <tt><?php echo $this->getLayoutFile('mail'); ?></tt></li>
-</ul>
+<h2>следующие данные были отправлены:</h2>
+<?php if($name) { ?>
+    <p><b>Имя:</b> <?php echo $name ?></p>
+<? } ?>
+<?php if($subject) { ?>
+    <p><b>Тема сообщения:</b> <?php echo $subject ?></p>
+<? } ?>
+<?php if($body) { ?>
+    <p><b>Текст сообщения:</b> <?php echo $body ?></p>
+<? } ?>

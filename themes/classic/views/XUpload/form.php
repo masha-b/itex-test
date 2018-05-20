@@ -37,18 +37,3 @@ if ($this->showForm) echo CHtml::beginForm($this -> url, 'post', $this -> htmlOp
     </table>
 <?php if ($this->showForm) echo CHtml::endForm();?>
 
-<style>
-    .fileinput-button label{
-        float: left;
-        margin-right: 20px;
-    }
-
-    .template-download .preview img {
-        height: 80px;
-        width: auto;
-    }
-    .template-download .error, .template-upload .error {
-        color: red;
-    }
-
-</style>

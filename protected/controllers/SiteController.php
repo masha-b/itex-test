@@ -43,24 +43,12 @@ class SiteController extends Controller
 	    }
 	}
 
-    public function actionXUpload() {
-        Yii::import("xupload.models.XUploadForm");
-        $model = new XUploadForm;
-        $this->render('xUpload', array('model' => $model, ));
-    }
-
-    /*public function actionXUpload() {
-        Yii::import("xupload.models.XUploadForm");
-        $model = new ContactForm;
-        $this->render('xupload', array('model' => $model, ));
-    }*/
-
 	/**
 	 * Displays the contact page
 	 */
 	public function actionContact()
 	{
-		$model=new ContactForm;
+		$model = new ContactForm;
 
         if(isset($_POST['ajax'])) {
             if ($_POST['ajax']=='contact-form') {
@@ -86,14 +74,14 @@ class SiteController extends Controller
 
             if($model->validate())
 			{
-                $mail = new YiiMailer('contact', array('name' => $model->name, 'message' => $model->body));
+                $mail = new YiiMailer('contact', $model->attributes);
+                $mail->isSMTP();
                 $mail->setLayout('mail', array('description' => 'Контакты - форма'));
                 $mail->setHTMLView('contact');
                 $mail->setFrom(Yii::app()->params['adminEmail'], 'Форма обратной связи');
                 $mail->setTo($model->email);
                 $mail->setSubject($model->subject);
-                //$mail->setBody($model->body);
-                if(is_array($model->file)) {
+                if(is_array($attachment)) {
                     $mail->setAttachment($attachment);
                 }
 
@@ -103,8 +91,16 @@ class SiteController extends Controller
                     Yii::app()->user->setFlash('error','Ошибка при отправке письма: ' . $mail->getError());
                 }
 
-				//Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
-				//$this->refresh();
+                if(is_array($attachment)) {
+                    foreach($attachment as $file) {
+                        if(file_exists($file)) {
+                            unlink($file);
+                        }
+                    }
+                }
+
+				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
+				$this->refresh();
 			}
 		}
         Yii::import("xupload.models.XUploadForm");

@@ -22,7 +22,7 @@
 		</tr>
 		<tr>
             <td style="padding:15px 20px;text-align:right;padding-top:5px;border-top:solid 1px #dfdfdf">
-				<a href="http://www.yiiframework.com/"><img alt="yiiframework.com" src="yii.png" /></a>
+				<a href="http://www.yiiframework.com/"></a>
 			</td>
 		</tr>
 	</tbody>

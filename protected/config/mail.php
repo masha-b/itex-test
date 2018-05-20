@@ -1,11 +1,11 @@
 <?php
 
 return array(
-	'viewPath' => 'application.views.mail',
-	'layoutPath' => 'application.views.layouts',
+	'viewPath' => 'webroot.themes.classic.views.mail',
+	'layoutPath' => 'webroot.themes.classic.views.layouts',
 	'baseDirPath' => 'webroot.images.mail', //note: 'webroot' alias in console apps may not be the same as in web apps
 	'savePath' => 'webroot.assets.mail',
-	'testMode' => true,
+	'testMode' => false,
 	'layout' => 'mail',
 	'CharSet' => 'UTF-8',
 	'AltBody' => Yii::t('YiiMailer', 'You need an HTML capable viewer to read this message.'),
@@ -33,7 +33,7 @@ return array(
 	'Mailer' => 'smtp',
 	'Host' => ' smtp.mailtrap.io',
 	'Port' => 25,
-	'SMTPSecure' => 'ssl',
+	'SMTPSecure' => 'tsl',
 	'SMTPAuth' => true,
 	'Username' => 'b7bd2ecd6cc72e',
 	'Password' => 'c8c815a4575746',

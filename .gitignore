@@ -67,3 +67,5 @@ Session.vim
 /composer.lock
 /vendor
 /uploads/*
+/assets/*
+protected/runtime/*

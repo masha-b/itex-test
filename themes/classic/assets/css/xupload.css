@@ -1,0 +1,12 @@
+.fileinput-button label{
+    float: left;
+    margin-right: 20px;
+}
+
+.template-download .preview img {
+    height: 80px;
+    width: auto;
+}
+.template-download .error, .template-upload .error {
+    color: red;
+}
