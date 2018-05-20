@@ -20,7 +20,7 @@
 </head>
 
 <body>
-123
+
 <div class="container" id="page">
 
 	<div id="header">

@@ -99,7 +99,7 @@ class SiteController extends Controller
                     }
                 }
 
-				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
+				Yii::app()->user->setFlash('contact','Спасибо, Ваше сообщение отправлено.');
 				$this->refresh();
 			}
 		}
